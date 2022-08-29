@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Details</title>
+</head>
+<body>
+  <h1>Edit User Details</h1>
+  <span><img src="{{user.image_url}}" alt=""></span>
+  <form action="/edit/{{user.id}}" method="POST">
+
+    First Name<br>
+    <input type="text" name="edit-first-name" value="{{user.first_name}}"> <br>
+    Last Name<br>
+    <input type="text" name="edit-last-name" value="{{user.last_name}}"><br>
+    Profile Picture <br>
+    <input type="text" name="edit-image-url" value="{{user.image_url}}"><br>
+    <button>Save</button>
+  </form>
+  
+</body>
+</html>

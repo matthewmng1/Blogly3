@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Details</title>
+</head>
+<body>
+  <h1>User Details</h1>
+    <h2>{{user.first_name}} {{user.last_name}}</h2>
+
+    <a href="/edit/{{user.id}}">Edit</a> <a href="/delete/{{user.id}}">Delete</a>
+    
+    <br>
+
+    <span>
+      <img src="{{user.image_url}}" alt="{{user.first_name}} {{user.last_name}} Profile Picture">
+    </span>
+    
+    <br>
+
+    <h2>User Posts</h2>
+    <a href="/{{user.id}}/posts/new">Add Post</a>
+    <ul>
+      {% for post in user.posts %}
+      <li>
+        <a href="/posts/new/{{post.id}}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <br>
+  <a href="/">Return To User List</a>
+</body>
+</html>
